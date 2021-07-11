@@ -24,19 +24,19 @@ const findJSXByAttr = (name: string, wrapper: any) => {
     return wrapper.find(`[data-test="${name}"]`)
 }
 
-test('check if RowList is able to be rendered', () => {
+test('check if RowList is abled to be rendered', () => {
   const wrapper = setup(mockProps);
 
 });
 
-test('check if RowList header is able to be rendered', () => {
+test('check if RowList header is abled to be rendered', () => {
   const wrapper = setup(mockProps);
   const header = findJSXByAttr('component-app-showHeader', wrapper)
   expect(header.length).toBe(1);;
 
 });
 
-test('check if RowList list is able to be rendered', () => {
+test('check if RowList list is abled to be rendered', () => {
   mockProps = {
     ...mockProps,
     fetchFunction: 'lol'

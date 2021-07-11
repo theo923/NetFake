@@ -10,6 +10,6 @@ const setup = (props={}, state=null) => {
     return shallow(<App {...props} />)
 }
 
-test('check if App is able to be rendered', () => {
+test('check if App is abled to be rendered', () => {
   const wrapper = setup();
 });
