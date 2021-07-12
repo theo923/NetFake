@@ -8,7 +8,7 @@ import './App.css';
 
 const App = () : JSX.Element => {
   return (
-    <div className='background'>
+    <div data-test="component-app-dom" className='background'>
       <Navigation />
       <Banner fetchFunction={getTopRated} />
       <RowList name='Netflix Original' fetchFunction={getNetflixOriginal} />

@@ -46,3 +46,16 @@ test('check if RowList list is abled to be rendered', () => {
   expect(header).toBeTruthy();
 
 });
+
+
+test('check if RowList context is hidden when rendered', () => {
+  mockProps = {
+    ...mockProps,
+    fetchFunction: 'lol',
+  }
+  const wrapper = setup(mockProps, null);
+
+  const header = findJSXByAttr('component-app-showContext', wrapper)
+  expect(header.length).toBe(0);
+
+});
