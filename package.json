@@ -18,7 +18,8 @@
     "react-scripts": "4.0.3",
     "react-youtube": "^7.13.1",
     "typescript": "^4.3.5",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "youtube-search": "^1.1.6"
   },
   "scripts": {
     "start": "craco start",

@@ -31,7 +31,6 @@
   cursor: pointer;
   color: #fff;
   outline: none;
-  border: none;
   font-weight: 700;
   border-radius: 0.2vw;
   padding-left: 2rem;
@@ -45,4 +44,9 @@
 .navTransition {
   transition-timing-function: ease-in;
   transition: all 0.5s;
+}
+
+.playButton {
+  background-color: #e73631;
+  color: #fefefd;
 }
