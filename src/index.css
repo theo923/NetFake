@@ -9,8 +9,6 @@
 .card {
   transition: transform 450ms;
   object-fit: "contain";
-  height: 100%;
-  width: 100%;
   margin-right: 10px;
 }
 
@@ -21,6 +19,10 @@
 .cardList {
   overflow-y: hidden;
   overflow-x: scroll;
+  min-height: 0;
+  min-width: 0;
+  scrollbar-width: none;
+  cursor: grab;
 }
 
 .cardList::-webkit-scrollbar {
@@ -33,11 +35,11 @@
   outline: none;
   font-weight: 700;
   border-radius: 0.2vw;
+  background-color: rgba(51, 51, 51, 0.5);
   padding-left: 2rem;
   padding-right: 2rem;
   margin-right: 1rem;
   padding-top: 0.5rem;
-  background-color: rgba(51, 51, 51, 0.5);
   padding-bottom: 0.5rem;
 }
 
