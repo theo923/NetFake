@@ -21,12 +21,16 @@
   overflow-x: scroll;
   min-height: 0;
   min-width: 0;
-  scrollbar-width: none;
-  cursor: grab;
 }
 
-.cardList::-webkit-scrollbar {
-  display: none;
+@media (max-width: 1000px) {
+  .cardList {
+    scrollbar-width: none;
+  }
+
+  .cardList::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .button {
