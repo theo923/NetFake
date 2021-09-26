@@ -1,29 +1,33 @@
-import React from 'react';
+import React from "react";
 
-export const Navigation = () : JSX.Element => {
-    const [show, handleShow] = React.useState<boolean>(false);
-    const list : string[] = ['Home', 'TV Shows', 'Movies', 'Latest', 'My List']
+export const Navigation = (): JSX.Element => {
+    const [show, setShow] = React.useState<boolean>(false);
+    const list: string[] = ["Home", "TV Shows", "Movies", "Latest", "My List"];
 
     React.useEffect(() => {
-        window.addEventListener('scroll', () => {
+        window.addEventListener("scroll", () => {
             if (window.scrollY > 200) {
-                handleShow(true)
-            } 
-            else handleShow(false)
+                setShow(true);
+            } else setShow(false);
         });
         return () => {
-            window.removeEventListener('scroll', () => {})
-        }
-    }, [])
+            window.removeEventListener("scroll", () => {});
+        };
+    }, []);
 
     return (
-        <nav data-test="component-navigation" className={`${show ? 'bg-black' : null} flex fixed top-0 h-16 w-full z-10 navTransition`}>
-            <div className='p-4' >
-                <img src='./image/icon.png' width='100px' />
+        <nav
+            data-test="component-navigation"
+            className={`nav ${show ? "bg-black" : null}`}
+        >
+            <div className="p-4">
+                <img src="./image/icon.png" width="100px" />
             </div>
-            <div className='mx-4 mt-6 text-white flex' >
-                {list.map((item: string, idx: number) => <div key={idx} className='text-xs mr-4'>{item}</div>)}
+            <div className="navList">
+                {list.map((item: string, idx: number) => (
+                    <div key={idx}>{item}</div>
+                ))}
             </div>
         </nav>
-    )
-}
+    );
+};

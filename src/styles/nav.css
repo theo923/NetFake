@@ -1,0 +1,23 @@
+.nav {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    height: 4rem /* 64px */;
+    width: 100%;
+    z-index: 10;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.navList {
+    display: flex;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    margin: 1.5rem 1rem 0 1rem;
+    font-size: 0.75rem /* 12px */;
+    line-height: 1rem /* 16px */;
+}
+
+.navList div {
+    margin-right: 1rem /* 16px */;
+}

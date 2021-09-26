@@ -1,0 +1,139 @@
+.rowHeader {
+    margin-left: 2rem /* 32px */;
+    margin-right: 2rem /* 32px */;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    font-weight: 900;
+    font-size: 1.5rem /* 24px */;
+    line-height: 2rem /* 32px */;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.rowList {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    min-height: 0;
+    min-width: 0;
+}
+
+.rowList {
+    display: flex;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.showContextGrid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}
+
+.showContextBar {
+    background-image: linear-gradient(
+        360deg,
+        transparent,
+        rgba(37, 37, 37, 0.61),
+        #111
+    );
+    height: 100px;
+}
+
+.showContextInfo {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    font-weight: 900;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    margin: 1.5rem /* 24px */;
+}
+
+.showContextInfo {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    font-weight: 900;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    margin: 1.5rem /* 24px */;
+}
+
+.showContextInfo div {
+    margin: 0.5rem /* 8px */;
+}
+
+.showContextInfo h1 {
+    margin: 0.5rem /* 8px */;
+}
+
+.showContextTitle {
+    font-size: 2.25rem /* 36px */;
+    line-height: 2.5rem /* 40px */;
+}
+
+.showContextOverview {
+    width: 24rem /* 384px */;
+    font-size: 0.75rem /* 12px */;
+    line-height: 1rem /* 16px */;
+}
+
+.showContextBottom {
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37, 37, 37, 0.61),
+        #111
+    );
+    height: 100px;
+}
+
+.youtube {
+    margin-top: 2.5rem/* 40px */;
+    margin-bottom: 2.5rem/* 40px */;
+    margin: 2.5rem 2.5rem 2.5rem 1rem;
+}
+
+@media (max-width: 1000px) {
+    .rowList {
+        scrollbar-width: none;
+    }
+
+    .rowList::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .showContextGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .showContextBar {
+        grid-column: span 2 / span 2;
+    }
+    .showContextInfo {
+        margin-left: 2.5rem /* 40px */;
+    }
+    .showContextTitle {
+        font-size: 3rem /* 48px */;
+        line-height: 1;
+    }
+    .showContextOverview {
+        width: 100%;
+        font-size: 0.875rem /* 14px */;
+        line-height: 1.25rem /* 20px */;
+    }
+    .showContextBottom {
+        grid-column: span 2 / span 2;
+    }
+}
+
+@media (min-width: 1280px) {
+    .showContextOverview {
+        width: 75%;
+    }
+}
