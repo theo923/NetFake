@@ -1,31 +1,49 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios, { AxiosResponse } from "axios";
+import { Iseries } from "./interface/interface";
 
+type BannerProps = {
+    fetchFunction: string;
+};
 
-export const Banner = ({ fetchFunction } : any ) : JSX.Element => {
-    const [serie, setSerie] = React.useState<any>({});
+export const Banner = ({ fetchFunction }: BannerProps): JSX.Element => {
+    const [serie, setSerie] = React.useState<Iseries>();
 
     React.useEffect(() => {
-        axios.get(fetchFunction)
-            .then(res => {
-                const data = res.data.results;
-                const setdata = Math.floor(Math.random() * data.length) + 1;
-                setSerie({...data[setdata]});
-            })
-    }, [])
+        axios.get(fetchFunction).then((res: AxiosResponse) => {
+            const data = res.data.results;
+            const setdata = Math.floor(Math.random() * data.length) + 1;
+            setSerie({ ...data[setdata] });
+        });
+    }, [fetchFunction]);
 
     return (
         <header data-test="component-banner">
-            <div className='flex flex-col items-left justify-center w-full bg-center bg-cover font-black text-white' style={{backgroundImage: `url("https://image.tmdb.org/t/p/original/${serie.backdrop_path}")`, height:'448px'}}>
-                <div className='flex-grow'></div>
-                <div className='flex font-sans m-2 text-4xl ml-6 lg:ml-10 lg:text-5xl'>{serie.title}</div>
-                <div className='flex font-sans m-2 ml-6 lg:ml-10'>
-                    <button className='flex justify-center items-center button playButton mr-4 hover:bg-gray-600'><img className='mr-2' src='/image/play.png' height='17px' width='17px' />PLAY</button>
-                    <button className='flex justify-center items-center button mr-4 border-solid border-gray-600 border-2 hover:bg-gray-600'><img className='mr-2' src='/image/plus.png' height='20px' width='20px' />MY LIST</button>
+            <div
+                className="banner"
+                style={{
+                    backgroundImage: `${
+                        serie?.backdrop_path
+                            ? `url("https://image.tmdb.org/t/p/original/${serie.backdrop_path}")`
+                            : ""
+                    }`,
+                }}
+            >
+                <div className="flex-grow"></div>
+                <div className="bannerTitle">{serie?.title}</div>
+                <div className="Btn">
+                    <button className="button playButton">
+                        <img alt="play" src="/image/play.png" />
+                        PLAY
+                    </button>
+                    <button className="button addButton">
+                        <img alt="add-list" src="/image/plus.png" />
+                        MY LIST
+                    </button>
                 </div>
-                <div className='font-sans m-2 w-96 ml-6 lg:ml-10 lg:w-1/2 text-xs lg:text-sm'>{serie.overview}</div>
-                <div className='relative flex-grow' style={{backgroundImage: 'linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111)'}}></div>
+                <div className="bannerOverview">{serie?.overview}</div>
+                <div className="bannerTransitionBar"></div>
             </div>
         </header>
-    )
-}
+    );
+};

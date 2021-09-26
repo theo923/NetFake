@@ -1,0 +1,9 @@
+.card {
+    transition: transform 450ms;
+    object-fit: "contain";
+    margin-right: 10px;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
